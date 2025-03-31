@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Damage Detector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-car-crash"></i> Car Damage Detector</h1>
+            <p>Upload an image to check if your car is damaged or not</p>
+        </header>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <p>Drag & Drop your car image here</p>
+            <span>OR</span>
+            <button class="browse-btn" id="browseBtn">Browse Files</button>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+        </div>
+
+        <div class="result-container" id="resultContainer" style="display: none;">
+            <div class="image-preview">
+                <img id="previewImage" src="" alt="Uploaded Car Image">
+            </div>
+            <div class="prediction-result">
+                <h2>Detection Result</h2>
+                <div class="result-box">
+                    <p>Status: <span id="resultText"></span></p>
+                    <p>Confidence: <span id="confidenceText"></span></p>
+                </div>
+                <div class="status-icon" id="statusIcon"></div>
+                <button class="check-another-btn" id="checkAnotherBtn">
+                    <i class="fas fa-redo"></i> Check Another Photo
+                </button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing image...</p>
+        </div>
+
+        <footer>
+            <p>Powered by TensorFlow & Flask</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #3498db;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --gray-color: #95a5a6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header h1 i {
+    margin-right: 0.5rem;
+}
+
+header p {
+    color: var(--gray-color);
+}
+
+.upload-area {
+    background-color: white;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-area:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    border-color: var(--dark-color);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-area p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.upload-area span {
+    color: var(--gray-color);
+    margin-bottom: 1rem;
+}
+
+.browse-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.browse-btn:hover {
+    background-color: #2980b9;
+}
+
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-preview {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-preview img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.prediction-result {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prediction-result h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.result-box {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.result-box p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-box p span {
+    font-weight: 600;
+}
+
+.status-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.loading {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.spinner {
+    border: 5px solid rgba(52, 152, 219, 0.2);
+    border-radius: 50%;
+    border-top: 5px solid var(--primary-color);
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.check-another-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-another-btn:hover {
+    background-color: #2980b9;
+}
+
+.check-another-btn i {
+    margin-right: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    color: var(--gray-color);
+    padding-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .result-container {
+        flex-direction: column;
+    }
+}
